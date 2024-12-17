@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Guide to Budget Travel</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #4338ca;
+}
+
+/* Introduction Section */
+.introduction {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.introduction h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+.introduction p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #4b5563;
+}
+
+/* Travel Tips Section */
+.travel-tips {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.tip-card {
+    padding: 2rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tip-card i {
+    font-size: 2rem;
+    color: #4f46e5;
+    margin-bottom: 1rem;
+}
+
+.tip-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.tip-card p {
+    color: #6b7280;
+}
+
+/* Destinations Section */
+.destinations {
+    padding: 4rem 0;
+}
+
+.destinations h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #1f2937;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination-content {
+    padding: 1.5rem;
+}
+
+.destination-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.destination-content p {
+    color: #6b7280;
+}
+
+/* Newsletter Section */
+.newsletter {
+    padding: 4rem 0;
+    background-color: #4f46e5;
+    color: white;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    padding: 0.75rem 2rem;
+    background: white;
+    color: #4f46e5;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    
+    .newsletter-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .introduction h2,
+    .destinations h2,
+    .newsletter h2 {
+        font-size: 2rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-feather-alt"></i>
+                <span>Group Blog</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="blog.html" class="nav-link"><i class="fas fa-book-open"></i>Blog</a></li>
+                <li><a href="about.html" class="nav-link active"><i class="fas fa-user"></i>About</a></li>
+                <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i>Contact</a></li>
+            </ul>
+            <button class="mobile-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>The Ultimate Guide to Budget Travel</h1>
+            <p>Discover how to explore the world without breaking the bank. Your comprehensive guide to smart and affordable travel.</p>
+            <button class="cta-button">Start Your Journey</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Introduction -->
+        <section class="introduction">
+            <div class="container">
+                <h2>Why Travel on a Budget?</h2>
+                <p>Traveling on a budget isn't just about saving money – it's about making smarter choices that often lead to more authentic and meaningful experiences. When you travel mindfully with your budget, you're more likely to connect with locals, discover hidden gems, and develop a deeper appreciation for your destinations.</p>
+            </div>
+        </section>
+
+        <!-- Travel Tips -->
+        <section class="travel-tips">
+            <div class="container">
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <i class="fas fa-calendar"></i>
+                        <h3>Time Your Travel Right</h3>
+                        <p>Travel during shoulder season to find better deals on flights and accommodation while still enjoying good weather.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-plane"></i>
+                        <h3>Flight Hacks</h3>
+                        <p>Use flight comparison tools, set price alerts, and be flexible with your dates to find the best deals.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-campground"></i>
+                        <h3>Alternative Accommodation</h3>
+                        <p>Consider hostels, guesthouses, or vacation rentals instead of traditional hotels to save money.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Smart Dining</h3>
+                        <p>Eat where locals eat, try street food, and cook some meals yourself to save on food costs.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-bus"></i>
+                        <h3>Local Transportation</h3>
+                        <p>Use public transportation, walk, or rent a bike to explore like a local and save money.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Destination Selection</h3>
+                        <p>Choose destinations where your money goes further and consider less touristy alternatives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destinations -->
+        <section class="destinations">
+            <div class="container">
+                <h2>Budget-Friendly Destinations</h2>
+                <div class="destinations-grid">
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Southeast Asia">
+                        <div class="destination-content">
+                            <h3>Southeast Asia</h3>
+                            <p>Perfect for budget travelers with affordable food, accommodation, and transportation.</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Eastern Europe">
+                        <div class="destination-content">
+                            <h3>Eastern Europe</h3>
+                            <p>Rich in history and culture with prices lower than Western Europe.</p>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="South America">
+                        <div class="destination-content">
+                            <h3>South America</h3>
+                            <p>Adventure and natural beauty at budget-friendly prices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <h2>Ready to Start Your Adventure?</h2>
+                <p>Subscribe to our newsletter for more budget travel tips and exclusive deals.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
